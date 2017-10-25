@@ -385,3 +385,19 @@ function is_datetime( $str )
     return FALSE;
   }
 }
+
+
+/**
+ * 判断某个字符串是否是时间类型的字符串
+ * @param type $date_str
+ * @param type $date_format
+ */
+function isDate( $date_str, $date_format = "Y-m-d H:i:s" )
+{
+  $date_time = strtotime( $date_str );
+  if( !$date_time || date( $date_format, $date_time ) != $date_str )
+  {
+    return FALSE;
+  }
+  return TRUE;
+}
