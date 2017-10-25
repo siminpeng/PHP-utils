@@ -401,3 +401,13 @@ function isDate( $date_str, $date_format = "Y-m-d H:i:s" )
   }
   return TRUE;
 }
+
+/**
+ * 获取时间，精确小数点后4位
+ * @return type
+ */
+function get_micro_time()
+{
+  list( $us_time, $s_time ) = explode( " ", microtime() );
+  return bcadd( $s_time, $us_time, 4 );
+}
