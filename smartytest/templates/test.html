@@ -9,8 +9,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div>测试smarty</div>
-    <p>{{$test}}</p>
+    <h2>smarty测试</h2>
+    <h3>变量和注释</h3>
+    <p>{$test}</p>
+    <P>这边是注释{* 这边是注释 *}</p>
+    
+    <h3>数组变量</h3>
+    <p>传真：{$contacts.fax}</p>
+    <p>email：{$contacts.email}</p>
+    <p>other：{$contacts.other.a}</p>
+    <p>other：{$contacts.other.b}</p>
+    
+    <h4>使用下标</h4>
+    <p>QQ:{$contacts_back[0]}</p>
+    <p>tel:{$contacts_back[1]}</p>
+    
+    <h3>对象</h3>
+    <p>姓名:{$obj->name}</p>
+    <p>年龄:{$obj->age}</p>
+    
+    <h3>变量修饰器</h3>
+    <p>修饰小写改为大写{$abc|upper}</p>
+    
+    <h4>第一个首字母大写capitalize</h4>
+    <p>{$articleTitle}</p>
+    <p>{$articleTitle|capitalize}</p>
+    <p>{$articleTitle|capitalize:true}</p>
+    
+    <h3>复合修饰器</h3>
+    <p>{$articleTitlea|upper|spacify}</p>
+    <p>{$articleTitlea|lower|spacify|truncate}</p>
+    <p>{$articleTitlea|lower|truncate:30|spacify}</p>
+    <p>{$articleTitlea|lower|spacify|truncate:30:". . ."}</p>
+    
+    <h3>循环</h3>
+    
+    <ul>
+      {for $foo = 1 to 3}
+        <li>{$foo}</li>
+      {/for}
+    </ul>
+    
+    </br>
+    
+    <ul>
+      {for $foo = 3 to $to max = 3}
+        <li>{$foo}</li>
+      {/for}
+    </ul>
+    
+    </br>
+
+    <ul>
+      {for $fo = $start to $to }
+        <li>{$fo}</li>
+       {forelse}
+        nostart
+      {/for}
+    </ul>
+    
+    
+    
+    
   </body>
 </html>
 
