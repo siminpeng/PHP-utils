@@ -39,7 +39,7 @@ function picturetest( $user_image_path = null, $username = null )
   imagedestroy( $bg_image );  
  }
  
- function yuan_img( $bg_image,$imgpath ) 
+function yuan_img( $bg_image,$imgpath ) 
 {
   $src_img = imagecreatefromstring( file_get_contents( $imgpath ) ); 
   if( !$src_img )
